@@ -3,7 +3,7 @@ const fetch = require('node-fetch')
 require('dotenv').config();
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const PREFIX = '!';
+const PREFIX = '#';
 
 async function getChampBuild (champ,msg)  {
     fetch(`https://lolimagaria.herokuapp.com/champ/${champ}`)
