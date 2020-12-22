@@ -1,7 +1,8 @@
-import fetch from 'node-fetch';
-import 'dotenv';
-import { Client } from 'discord.js';
-const client = new Client();
+// import fetch from 'node-fetch';
+const fetch = require('node-fetch')
+require('dotenv').config();
+const Discord = require('discord.js');
+const client = new Discord.Client();
 const PREFIX = '!';
 
 async function getChampBuild (champ,msg)  {
@@ -56,5 +57,5 @@ client.on('message', msg => {
         getChampBuild(champ,msg)
     }
 });
-
-client.login('NzkwOTI4ODY5MzE4MTk3MjUy.X-Hv6Q.lGyU_F1GMGhvoBCbRVyJ_yrXbbM');
+console.log(process.env.BOT_TOKEN)
+client.login(process.env.BOT_TOKEN);
