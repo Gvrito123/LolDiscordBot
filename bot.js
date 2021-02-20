@@ -4,6 +4,10 @@ require('dotenv').config();
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const PREFIX = '#';
+const express = require('express');
+const app = express();
+
+app.listen(process.env.PORT || 5000)
 
 async function getChampBuild (champ,msg)  {
     await fetch(`https://lolimagaria.herokuapp.com/champ/${champ}`)
