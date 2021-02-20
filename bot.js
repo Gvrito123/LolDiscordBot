@@ -6,7 +6,7 @@ const client = new Discord.Client();
 const PREFIX = '#';
 
 async function getChampBuild (champ,msg)  {
-    fetch(`https://lolimagaria.herokuapp.com/champ/${champ}`)
+    await fetch(`https://lolimagaria.herokuapp.com/champ/${champ}`)
     .then(data => {
         let build = data.json()
         .then(data => {
@@ -57,5 +57,4 @@ client.on('message', msg => {
         getChampBuild(champ,msg)
     }
 });
-console.log(process.env.BOT_TOKEN)
 client.login(process.env.BOT_TOKEN);
